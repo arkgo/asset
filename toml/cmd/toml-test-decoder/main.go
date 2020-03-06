@@ -3,7 +3,6 @@
 package main
 
 import (
-	"encoding/json"
 	"flag"
 	"fmt"
 	"log"
@@ -39,7 +38,7 @@ func main() {
 	}
 
 	typedTmp := translate(tmp)
-	if err := json.NewEncoder(os.Stdout).Encode(typedTmp); err != nil {
+	if err := ark.NewEncoder(os.Stdout).Encode(typedTmp); err != nil {
 		log.Fatalf("Error encoding JSON: %s", err)
 	}
 }

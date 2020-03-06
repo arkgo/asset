@@ -3,7 +3,6 @@
 package main
 
 import (
-	"encoding/json"
 	"flag"
 	"log"
 	"os"
@@ -34,7 +33,7 @@ func main() {
 	}
 
 	var tmp interface{}
-	if err := json.NewDecoder(os.Stdin).Decode(&tmp); err != nil {
+	if err := ark.NewDecoder(os.Stdin).Decode(&tmp); err != nil {
 		log.Fatalf("Error decoding JSON: %s", err)
 	}
 

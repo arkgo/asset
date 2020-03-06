@@ -1,7 +1,6 @@
 package log
 
 import (
-	"encoding/json"
 	"fmt"
 	"os"
 	"path"
@@ -10,6 +9,8 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/arkgo/ark"
 )
 
 var version = "v1.2"
@@ -392,5 +393,5 @@ func printError(message string) {
 }
 
 func (v loggerMessage) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v)
+	return ark.Marshal(v)
 }

@@ -291,7 +291,7 @@ func (fw *FileWriter) writeByConfig(config *FileConfig, loggerMsg *loggerMessage
 
 	msg := ""
 	if config.Json == true {
-		//jsonByte, _ := json.Marshal(loggerMsg)
+		//jsonByte, _ := ark.Marshal(loggerMsg)
 		jsonByte, _ := loggerMsg.MarshalJSON()
 		msg = string(jsonByte) + "\r\n"
 	} else {

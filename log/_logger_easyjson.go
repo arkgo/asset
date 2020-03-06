@@ -11,10 +11,10 @@ import (
 
 // suppress unused package warning
 var (
-	_ *json.RawMessage
+	_ *ark.RawMessage
 	_ *jlexer.Lexer
 	_ *jwriter.Writer
-	_ easyjson.Marshaler
+	_ easyark.Marshaler
 )
 
 func easyjson22b64118DecodeGithubComPhachonGoLogger(in *jlexer.Lexer, out *loggerMessage) {
@@ -149,26 +149,26 @@ func easyjson22b64118EncodeGithubComPhachonGoLogger(out *jwriter.Writer, in logg
 	out.RawByte('}')
 }
 
-// MarshalJSON supports json.Marshaler interface
+// MarshalJSON supports ark.Marshaler interface
 func (v loggerMessage) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
 	easyjson22b64118EncodeGithubComPhachonGoLogger(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
-// MarshalEasyJSON supports easyjson.Marshaler interface
+// MarshalEasyJSON supports easyark.Marshaler interface
 func (v loggerMessage) MarshalEasyJSON(w *jwriter.Writer) {
 	easyjson22b64118EncodeGithubComPhachonGoLogger(w, v)
 }
 
-// UnmarshalJSON supports json.Unmarshaler interface
+// UnmarshalJSON supports ark.Unmarshaler interface
 func (v *loggerMessage) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
 	easyjson22b64118DecodeGithubComPhachonGoLogger(&r, v)
 	return r.Error()
 }
 
-// UnmarshalEasyJSON supports easyjson.Unmarshaler interface
+// UnmarshalEasyJSON supports easyark.Unmarshaler interface
 func (v *loggerMessage) UnmarshalEasyJSON(l *jlexer.Lexer) {
 	easyjson22b64118DecodeGithubComPhachonGoLogger(l, v)
 }

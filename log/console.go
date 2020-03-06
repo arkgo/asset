@@ -90,7 +90,7 @@ func (adapterConsole *AdapterConsole) Write(loggerMsg *loggerMessage) error {
 
 	msg := ""
 	if adapterConsole.config.Json == true {
-		//jsonByte, _ := json.Marshal(loggerMsg)
+		//jsonByte, _ := ark.Marshal(loggerMsg)
 		jsonByte, _ := loggerMsg.MarshalJSON()
 		msg = string(jsonByte)
 	} else {
