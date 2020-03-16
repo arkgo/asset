@@ -11,7 +11,7 @@ import (
 	"net/url"
 	"os"
 
-	. "github.com/arkgo/base"
+	. "github.com/arkgo/asset"
 )
 
 //发送HTTP GET请求

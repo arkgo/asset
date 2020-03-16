@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	. "github.com/arkgo/base"
+	. "github.com/arkgo/asset"
 )
 
 func ToString(val Any) string {
