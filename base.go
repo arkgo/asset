@@ -5,6 +5,10 @@ import (
 	"strings"
 )
 
+var (
+	VarNil = Var{nil: true}
+)
+
 type (
 	Any = interface{}
 	Map = map[string]Any
@@ -17,6 +21,7 @@ type (
 
 	Vars map[string]Var
 	Var  struct {
+		nil      bool
 		Type     string `json:"type"`
 		Require  bool   `json:"require"`
 		Unique   bool   `json:"unique"`
@@ -166,4 +171,8 @@ func (res *Res) Error() string {
 		}
 	}
 	return res.Text
+}
+
+func (vvv *Var) Nil() bool {
+	return vvv.nil
 }
