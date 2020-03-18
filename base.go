@@ -14,6 +14,28 @@ type (
 		Text string
 		Args []Any
 	}
+
+	Vars map[string]Var
+	Var  struct {
+		Type     string `json:"type"`
+		Require  bool   `json:"require"`
+		Unique   bool   `json:"unique"`
+		Nullable bool   `json:"nullable"`
+		Name     string `json:"name"`
+		Desc     string `json:"desc"`
+		Default  Any    `json:"default"`
+		Setting  Map    `json:"setting"`
+		Children Vars   `json:"children"`
+		Option   Map    `json:"option"`
+
+		Empty *Res `json:"-"`
+		Error *Res `json:"-"`
+
+		Encode string              `json:"-"`
+		Decode string              `json:"-"`
+		Valid  func(Any, Var) bool `json:"-"`
+		Value  func(Any, Var) Any  `json:"-"`
+	}
 )
 
 const (
