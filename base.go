@@ -109,10 +109,10 @@ const (
 	NIN = "$$NOTIN$$" //支持	WHERE id NOT IN(1,2,3)
 	ANY = "$$ANY$$"   //支持数组字段的
 
-	LIKE  = "$$full$$"  //like搜索
-	FULL  = "$$full$$"  //like搜索
-	LEFT  = "$$left$$"  //like left搜索
-	RIGHT = "$$right$$" //like right搜索
+	SEARCH  = "$$full$$"  //like搜索
+	FULLLIKE  = "$$full$$"  //like搜索
+	LEFTLIKE  = "$$left$$"  //like left搜索
+	RIGHTLIKE = "$$right$$" //like right搜索
 
 	INC = "$$inc$$" //累加，    UPDATE时用，解析成：views=views+value
 
