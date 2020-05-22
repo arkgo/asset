@@ -109,7 +109,7 @@ const (
 	NIN = "$$NOTIN$$" //支持	WHERE id NOT IN(1,2,3)
 	ANY = "$$ANY$$"   //支持数组字段的
 
-	SEARCH  = "$$full$$"  //like搜索
+	SEARCH    = "$$full$$"  //like搜索
 	FULLLIKE  = "$$full$$"  //like搜索
 	LEFTLIKE  = "$$left$$"  //like left搜索
 	RIGHTLIKE = "$$right$$" //like right搜索
