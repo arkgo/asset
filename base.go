@@ -23,7 +23,7 @@ type (
 	Var  struct {
 		nil      bool
 		Type     string `json:"type"`
-		Require  bool   `json:"require"`
+		Required bool   `json:"require"`
 		Unique   bool   `json:"unique"`
 		Nullable bool   `json:"nullable"`
 		Name     string `json:"name"`
