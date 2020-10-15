@@ -159,6 +159,10 @@ func (res *Res) OK() bool {
 func (res *Res) Fail() bool {
 	return res.OK() == false
 }
+func (res *Res) Affix(args ...Any) *Res {
+	res.Args = args
+	return res
+}
 
 func (res *Res) Error() string {
 	if res == nil {
